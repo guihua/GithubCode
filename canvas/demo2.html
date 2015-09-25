@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>canvas</title>
+	</head>
+	<body>
+		<canvas id="myCanvas1" width="400" height="200"></canvas>
+		<canvas id="myCanvas2" width="400" height="200"></canvas>
+
+		<script>
+			var canvas1 = document.getElementById("myCanvas1").getContext("2d"),
+				canvas2 = document.getElementById("myCanvas2").getContext("2d");
+
+			// 绘制
+			// 实心
+			canvas1.fillStyle = "#CC0000";
+			canvas1.fillRect(20, 20, 360, 160);
+			canvas1.clearRect(20, 20, 100, 100); // 清除某个矩形区域的内容
+			// 空心
+			canvas2.strokeStyle = "#CC0000";
+			canvas2.strokeRect(20, 20, 360, 160);
+		</script>
+	</body>
+</html>

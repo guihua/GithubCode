@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>canvas</title>
+		<style>
+			* {margin:0;padding:0}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="400" height="200"></canvas>
+
+		<script>
+			var canvas = document.getElementById("myCanvas"),
+				context = canvas.getContext("2d");
+
+			var posX = 20,
+			    posY = 20;
+
+			setInterval(function() {
+				if (posX > 380) {
+					posX = 20;
+				}
+
+				if (posY > 180) {
+					posY = 20;
+				}
+
+			    context.fillStyle = "black";
+			    context.fillRect(0,0,canvas.width, canvas.height);
+
+			    posX += 1;
+			    posY += 0.25;
+
+			    context.beginPath();
+			    context.fillStyle = "white";
+
+			    context.arc(posX, posY, 10, 0, Math.PI*2, true); 
+			    context.closePath();
+			    context.fill();
+			}, 30);
+		</script>
+	</body>
+</html>

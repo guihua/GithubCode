@@ -1,0 +1,16 @@
+@media screen and (-webkit-min-device-pixel-ratio:1), screen and (-moz-min-device-pixel-ratio:1), screen and (-o-min-device-piratio:100/100), screen and (min-device-pixel-ratio:1) {
+    .bg {
+        background-image: url("//gtms02.alicdn.com/tps/i2/TB1WCdPIpXXXXcaXFXXK7pO6XXX-226-178.png");
+        -webkit-background-size: 226px 178px;
+        -moz-background-size: 226px 178px;
+        background-size: 226px 178px;
+    }
+}
+@media screen and (-webkit-min-device-pixel-ratio:2), screen and (-moz-min-device-pixel-ratio:2), screen and (-o-min-device-piratio:200/100), screen and (min-device-pixel-ratio:2) {
+    .bg {
+        background-image: url("//gtms03.alicdn.com/tps/i3/TB1bF4TIpXXXXaAXFXX_PIy.XXX-452-356.png");
+        -webkit-background-size: 226px 178px;
+        -moz-background-size: 226px 178px;
+        background-size: 226px 178px;
+    }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>canvas</title>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="400" height="200"></canvas>
+
+		<script>
+			var canvas = document.getElementById("myCanvas"),
+				ctx;
+
+			if (canvas.getContext) {
+				ctx = canvas.getContext("2d");
+			}
+
+			// 绘制
+			ctx.beginPath(); // 开始路径
+			ctx.moveTo(20, 20); // 设置路径起点，坐标为(20,20)
+			ctx.lineTo(380, 20);
+			ctx.lineTo(380, 180);
+			ctx.lineTo(20, 180);
+			ctx.lineTo(20, 20);
+			ctx.closePath();
+
+			// 线的属性，着色
+			ctx.lineWidth = 1.0;
+			ctx.strokeStyle = "#CC0000";
+			ctx.stroke();
+		</script>
+	</body>
+</html>

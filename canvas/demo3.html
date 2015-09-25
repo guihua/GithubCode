@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>canvas</title>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="400" height="200"></canvas>
+
+		<script>
+			var ctx = document.getElementById("myCanvas").getContext("2d");
+
+			// 设置字体
+			ctx.font ="Bold 20px Arial";
+			// 设置对齐方式
+			ctx.textAlign ="left";
+			// 设置填充颜色
+			ctx.fillStyle ="#CC0000";
+			// 设置字体内容，以及在画布上的位置
+			ctx.fillText("Hello, canvas!", 10, 50);
+			// 绘制空心字
+			ctx.strokeStyle = "#CC0000";
+			ctx.strokeText("Hello, canvas!", 10, 100);
+		</script>
+	</body>
+</html>

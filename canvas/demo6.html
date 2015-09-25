@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>canvas</title>
+		<style>
+			* {margin:0;padding:0}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="400" height="200"></canvas>
+
+		<script>
+			var ctx = document.getElementById("myCanvas").getContext("2d");
+
+			ctx.shadowOffsetX = 10; // 设置水平位移
+			ctx.shadowOffsetY = 10; // 设置垂直位移
+			ctx.shadowBlur = 5; // 设置模糊度
+			ctx.shadowColor = "rgba(0,0,0,0.5)"; // 设置阴影颜色
+
+			ctx.fillStyle = "#CC0000"; 
+			ctx.fillRect(10,10,200,100);
+		</script>
+	</body>
+</html>

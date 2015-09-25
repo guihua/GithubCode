@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>canvas</title>
+		<style>
+			* {margin:0;padding:0}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="400" height="200"></canvas>
+
+		<script>
+			var canvas = document.getElementById("myCanvas"),
+				context = canvas.getContext("2d");
+
+			var image = new Image();
+
+			image.onload = function() { 
+			    canvas.width = image.width;
+			    canvas.height = image.height;
+			    
+			    context.drawImage(image, 0, 0);
+			}
+
+			image.src = "code.png";
+
+			if (canvas.width > 0 && canvas.height > 0) {
+			    var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+
+			    context.putImageData(grayscale(imageData), 0, 0);
+			}
+
+			function grayscale(pixels) {
+				var d = pixels.data;
+
+				for (var i = 0; i < d.length; i += 4) {
+					var r = d[i],
+						g = d[i + 1],
+						b = d[i + 2];
+
+					d[i] = d[i + 1] = d[i + 2] = (r + g + b) / 3;
+				}
+
+				return pixels;
+			}
+		</script>
+	</body>
+</html>

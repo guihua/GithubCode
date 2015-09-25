@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>canvas</title>
+		<style>
+			* {margin:0;padding:0}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="400" height="200"></canvas>
+
+		<script>
+			var canvas = document.getElementById("myCanvas"),
+				ctx = canvas.getContext("2d");
+
+			var myGradient = ctx.createLinearGradient(0, 0, 0, 200); 
+			myGradient.addColorStop(0, "#CC0000"); 
+			myGradient.addColorStop(1, "#FFF");
+
+			ctx.fillStyle = myGradient;
+			ctx.fillRect(0,0,400,200);
+
+			// 读取Canvas的内容
+			var imageData = ctx.getImageData(0,0,400,200);
+			console.log(imageData);
+			// ctx.putImageData(imageData, 0, 0);
+
+			// 将Canvas数据重新转化成一般的图像文件形式
+			console.log(canvas.toDataURL());
+		</script>
+	</body>
+</html>
